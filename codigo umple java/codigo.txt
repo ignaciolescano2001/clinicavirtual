@@ -1,0 +1,144 @@
+class Consulta {
+    char enLineaOCita;
+    Date fechaSolicitud;
+    String cadenaSintomas;
+    char estadoSolicitud;
+  * -- * Doctor;
+  * -- * Preinscripcion;
+  * -- * Paciente;
+  * -- * Laboratorio;
+}
+
+class Paciente {
+    String id;
+    String nombre;
+    int edad;
+    char genero;
+    String email;
+    String telefono;
+    String direccion;
+
+      * -- * Preinscripcion;
+void crearPerfilDePaciente() { }
+    void editarPerfilDePaciente() { }
+    void eliminarPerfilDePaciente() { }
+    void solicitudDeConsulta() { }
+}
+
+class Preinscripcion {
+    int idDePrescripcion;
+    char diagnostico;
+    String nombreDeMedicina;
+    int potenciaMedicamento;
+    int frecuenciaMedicamento;
+    String observaciones;
+    String pruebaDeLaboratorio;
+    String laboratorioDeInstrucciones;
+    char preinscripcionEntregar;
+    char solicitudesDeLaboratorioRealizadas;
+    float montoDeLaFactura;
+
+      * -- * Quimico;
+void generarFactura() { }
+}
+
+class Doctor {
+    String id;
+    String nombre;
+    int edad;
+    char genero;
+    String calificacion;
+    String experiencia;
+    String numeroRegistro;
+
+        * -- * Especialista;
+  * -- * Paciente;
+void a??adirMedico() { }
+    void editarDoctor() { }
+    void eliminarMedico() { }
+    void proporcionarConsulta() { }
+}
+
+class Especialista {
+    String ssd;
+    String nombre;
+    String descripcion;
+
+    void agregarEspecialidad(String ssd, String nombre, String descripcion) { }
+    void editarEspecialidad(String ssd, String nombre, String descripcion) { }
+    void eliminarEspecialidad(String ssd) { }
+}
+
+class Laboratorio {
+    String id;
+    String nombre;
+    String direccion;
+    String email;
+    String telefono;
+
+    void a??adirLaboratorio() { }
+    void editarLaboratorio() { }
+    void eliminarLaboratorio() { }
+    void realizarMuestra() { }
+    void generarInforme() { }
+}
+
+class Quimico {
+    String idQuimico;
+    String nombre;
+    String direccion;
+    String email;
+    String telefono;
+
+    void a??adirQuimico() { }
+    void editarQuimico() { }
+    void entregaDeMedicamentos() { }
+}
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class Consulta
+{
+  position 510 90 185.25 109.463;
+  position.association Consulta__Doctor 0,21 182,89;
+  position.association Consulta__Preinscripcion 0,69 139,0;
+  position.association Consulta__Paciente 0,84 136,30;
+  position.association Consulta__Laboratorio 141,82 88,37;
+}
+
+class Paciente
+{
+  position 38 200 134.825 160.462;
+  position.association Paciente__Preinscripcion 136,41 50,0;
+}
+
+class Preinscripcion
+{
+  position 249 290 298.325 228.462;
+  position.association Preinscripcion__Quimico 0,78 142,20;
+}
+
+class Doctor
+{
+  position 256 0 181.525 160.462;
+  position.association Doctor__Doctor:roleName 59,160.462 0,81;
+  position.association Doctor__Especialista 0,154 151,67;
+  position.association Doctor__Paciente 7,160 136,12;
+}
+
+class Especialista
+{
+  position 42 89 150.062 92.4625;
+}
+
+class Laboratorio
+{
+  position 581 319 134.825 126.463;
+}
+
+class Quimico
+{
+  position 52 384 141.363 126.463;
+}
